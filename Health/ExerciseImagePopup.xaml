@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup 
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Health.ExerciseImagePopup">
+
+    <VerticalStackLayout Padding="20" Spacing="15" VerticalOptions="Center">
+        
+        <Image x:Name="ExerciseImage"
+               IsAnimationPlaying="True"
+               WidthRequest="300"
+               HeightRequest="300"
+               Aspect="AspectFit" />
+
+        <Label x:Name="ExerciseName"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               LineBreakMode="WordWrap" />
+
+        <Label x:Name="ExerciseType"
+               TextColor="Gray"
+               HorizontalTextAlignment="Center"
+               FontSize="14" />
+
+        <Button Text="Закрыть"
+                Clicked="OnCloseClicked"
+                BackgroundColor="#0080ff"
+                TextColor="White"
+                CornerRadius="8"
+                Padding="10,8" />
+
+    </VerticalStackLayout>
+
+</toolkit:Popup>

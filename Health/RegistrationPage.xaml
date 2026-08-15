@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Health.RegistrationPage"
+    Title=""
+    Padding="0">
+
+    <Grid RowDefinitions="*,Auto">
+
+        <ScrollView>
+        <!-- Основной контент -->
+        <VerticalStackLayout 
+            Grid.Row="0"
+            Spacing="5"
+            Padding="0"
+            Margin="0">
+
+            <!-- Прогресс -->
+            <Label 
+                Text="Шаг 1 из 2"
+                HorizontalOptions="Center"
+                FontSize="16"
+                TextColor="#6B6B6B"
+                Margin="0,5,0,0"/>
+
+            <ProgressBar 
+                 Progress="0.5"
+                 ProgressColor="#6C63FF"
+                 HeightRequest="6"
+                 Margin="20,0,20,10"
+                 BackgroundColor="#E0E0E0"/>
+
+            <!-- Остальной контент -->
+            <Label
+                HorizontalOptions="Center"
+                Text="Ведите свои параметры:"
+                FontSize="28"
+                FontAttributes="Bold"
+                Margin="0,20,0,0"/>
+
+            <Label
+                HorizontalOptions="Center"
+                Text="Введите дату рождения:"
+                FontSize="22"
+                Margin="0,20,0,0"/>
+
+            <Entry 
+                x:Name="DateOfBirthEntry" 
+                Placeholder="ДД.ММ.ГГГГ" 
+                WidthRequest="150"
+                HorizontalTextAlignment="Center"/>
+
+            <Grid Margin="20,40,20,0" ColumnSpacing="40">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label 
+                    Grid.Column="0" 
+                    Grid.Row="0"
+                    Text="Рост (см):"
+                    FontSize="18"
+                    HorizontalOptions="Center"/>
+                <Entry 
+                    Grid.Column="0" 
+                    Grid.Row="1" 
+                    x:Name="HeightEntry" 
+                    Placeholder="Введите рост" 
+                    WidthRequest="100"/>
+                <Label
+                    Grid.Column="1" 
+                    Grid.Row="0" 
+                    Text="Вес (кг):"
+                    FontSize="18"
+                    HorizontalOptions="Center"/>
+                <Entry 
+                    Grid.Column="1" 
+                    Grid.Row="1" 
+                    x:Name="WeightEntry" 
+                    Placeholder="Введите вес" 
+                    WidthRequest="100"/>
+            </Grid>
+
+            <Label
+                HorizontalOptions="Center"
+                Text="Пол:"
+                FontSize="22"
+                Margin="0,40,0,0"/>
+            <Picker x:Name="GenderPicker" WidthRequest="100">
+                <Picker.Items>
+                    <x:String>Мужской</x:String>
+                    <x:String>Женский</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label
+                HorizontalOptions="Center"
+                Text="Цель:"
+                FontSize="27"
+                FontAttributes="Bold"
+                Margin="0,90,0,0"/>
+            <Label
+                HorizontalOptions="Center"
+                Text="Чего вы хотите достичь?"
+                FontSize="22"
+                Margin="0,15,0,0"/>
+            <Picker x:Name="GoalPicker" WidthRequest="200">
+                <Picker.Items>
+                    <x:String>Похудение</x:String>
+                    <x:String>Поддержание веса</x:String>
+                    <x:String>Набор массы</x:String>
+                </Picker.Items>
+            </Picker>
+        </VerticalStackLayout>
+        </ScrollView>
+        <!-- Кнопка -->
+        <Button
+            Grid.Row="1"
+            Margin="10,0,10,15"
+            Text="Продолжить →"
+            FontAttributes="Bold"
+            TextColor="Black"
+            BackgroundColor="#6798cb"
+            Clicked="OnNavigateButtonClicked"/>
+    </Grid>
+</ContentPage>

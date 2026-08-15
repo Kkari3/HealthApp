@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Health.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Health"
+    Title="Health"
+    Shell.TabBarBackgroundColor="#0080ff"
+    Shell.TabBarTitleColor="White"
+    Shell.TabBarUnselectedColor="White"
+    Shell.TabBarForegroundColor="{x:Null}">
+    <TabBar>
+        <Tab Title="Питание"
+             Icon="nutritionicon.png"
+             Shell.TabBarForegroundColor="Black">
+             <ShellContent ContentTemplate="{DataTemplate local:NutritionPage}" />
+        </Tab>
+        <Tab Title="Тренировка"
+             Icon="dumbellicon.png">
+             <ShellContent ContentTemplate="{DataTemplate local:ExercisePage}" />
+        </Tab>
+        <Tab Title="Водный баланс"
+             Icon="glassicon.png"
+            Shell.TabBarForegroundColor="Black">
+            <ShellContent ContentTemplate="{DataTemplate local:WaterPage}" />
+        </Tab>
+        <Tab Title="Чат-бот"
+             Icon="ai.png"
+             Shell.TabBarForegroundColor="Black">    
+            <ShellContent ContentTemplate="{DataTemplate local:Chat}" />
+        </Tab>
+    </TabBar>
+    <ShellContent
+    Route="profile"
+    ContentTemplate="{DataTemplate local:ProfilePage}" />
+    <ShellContent
+    Route="nutritionstatistics"
+    ContentTemplate="{DataTemplate local:NutritionStatisticsPage}"/>
+    <ShellContent
+    Route="mealjournal"
+    ContentTemplate="{DataTemplate local:MealJournal}"/>
+
+</Shell>
+

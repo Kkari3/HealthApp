@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Health.RegistrationPage2"
+             Shell.NavBarIsVisible="False"
+             Title="">
+    <Grid RowDefinitions="*,Auto">
+        <ScrollView>
+        <VerticalStackLayout Grid.Row="0" Spacing="20">
+            <Label 
+                Text="Шаг 2 из 2"
+                HorizontalOptions="Center"
+                FontSize="16"
+                TextColor="#6B6B6B"
+                Margin="0,20,0,0"/>
+
+            <ProgressBar 
+                 Progress="1"
+                 ProgressColor="#6C63FF"
+                 HeightRequest="6"
+                 Margin="20,0,20,10"
+                 BackgroundColor="#E0E0E0"/>
+            <Label
+                HorizontalOptions="Center"
+                Text="Сколько времени вы готовы тратить в день на тренировки?"
+                FontSize="20"
+                Margin="19,0,0,0"/>
+            <Picker
+                x:Name="DurationPicker"
+                HorizontalOptions="Center">
+                <Picker.Items>
+                    <x:String>10–15 минут</x:String>
+                    <x:String>20–30 минут</x:String>
+                    <x:String>45–60 минут</x:String>
+                    <x:String>Более 1 часа</x:String>
+                </Picker.Items>
+            </Picker>
+            <Grid Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Образ жизни:"
+                    FontSize="20"
+                    HorizontalOptions="Center" />
+                <Picker
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    x:Name="LifestylePicker"
+                    HorizontalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Сидячий</x:String>
+                        <x:String>Умеренно активный</x:String>
+                        <x:String>Активный</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="Уровень физической подготовки:"
+                    FontSize="20"
+                    HorizontalOptions="Center" />
+                <Picker
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    x:Name="FitnessLevelPicker"
+                    HorizontalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Я новичок</x:String>
+                        <x:String>Иногда тренируюсь</x:String>
+                        <x:String>Регулярно тренируюсь</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Grid>
+            <Label
+                HorizontalOptions="Center"
+                Text="Какое у вас есть оборудование?"
+                FontSize="20"
+                Margin="0,20,0,0"/>
+            <Button
+                Margin="1,0,0,0"
+                WidthRequest="200"
+                Text="Выбрать оборудование" 
+                Clicked="OnSelectGearClicked"/>
+            <Label 
+                Margin="15,0,15,0"
+                x:Name="SelectedGearLabel" 
+                Text="Оборудование не выбрано"
+                HorizontalOptions="Center"/>
+
+            <Label
+                HorizontalOptions="Center"
+                Text="Предпочтения по тренировкам:"
+                FontSize="20"
+                Margin="0,20,0,0"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <VerticalStackLayout Grid.Column="0" Spacing="10">
+                    <HorizontalStackLayout>
+                        <CheckBox x:Name="CardioCheckbox" CheckedChanged="OnOtherCheckboxChanged"/>
+                        <Label Text="Кардио" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <CheckBox x:Name="StrengthCheckbox" CheckedChanged="OnOtherCheckboxChanged"/>
+                        <Label Text="Силовые" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <CheckBox x:Name="YogaCheckbox" CheckedChanged="OnOtherCheckboxChanged"/>
+                        <Label Text="Йога / растяжка" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+                <VerticalStackLayout Grid.Column="1" Spacing="10">
+                    <HorizontalStackLayout>
+                        <CheckBox x:Name="HomeCheckbox" CheckedChanged="OnOtherCheckboxChanged"/>
+                        <Label Text="Домашние" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <CheckBox x:Name="OutdoorCheckbox" CheckedChanged="OnOtherCheckboxChanged"/>
+                        <Label Text="На свежем воздухе" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <CheckBox x:Name="AnyCheckbox" CheckedChanged="OnAnyCheckboxChanged"/>
+                        <Label Text="Без разницы" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+            <Button
+                Grid.Row="1"
+                Margin="10,0,10,15"
+                Text="Завершить"
+                FontAttributes="Bold"
+                TextColor="Black"
+                BackgroundColor="#4CAF50"
+                Clicked="OnFinishButtonClicked"/>
+        </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

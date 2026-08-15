@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Health.ViewModels"
+             xmlns:converters="clr-namespace:Health.Converters" 
+             x:Class="Health.Chat">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:RoleToLayoutConverter x:Key="RoleToLayoutConverter" />
+            <converters:RoleToColorConverter x:Key="RoleToColorConverter" />
+            <converters:RoleToDisplayNameConverter x:Key="RoleToDisplayNameConverter" />
+            <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+            <converters:MarkdownToHtmlConverter x:Key="MarkdownToHtmlConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="*, Auto" Padding="10">
+
+        <CollectionView Grid.Row="0" 
+                        ItemsSource="{Binding Messages}"
+                        ItemsUpdatingScrollMode="KeepLastItemInView"
+                        Margin="0,30,0,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="5" Spacing="2">
+
+                        <Label Text="{Binding Role, Converter={StaticResource RoleToDisplayNameConverter}}" 
+                               TextColor="Gray" 
+                               FontSize="10"
+                               HorizontalOptions="{Binding Role, Converter={StaticResource RoleToLayoutConverter}}"
+                               Margin="5,0" />
+
+                        <Frame BackgroundColor="{Binding Role, Converter={StaticResource RoleToColorConverter}}"
+                               HorizontalOptions="{Binding Role, Converter={StaticResource RoleToLayoutConverter}}"
+                               CornerRadius="15"
+                               Padding="10"
+                               BorderColor="Transparent"
+                               MaximumWidthRequest="280">
+
+
+                            <Label Text="{Binding Text, Converter={StaticResource MarkdownToHtmlConverter}}" 
+                                   TextType="Html"
+                                   TextColor="Black" />
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Frame Grid.Row="0"
+               VerticalOptions="Start"
+               HorizontalOptions="Center"
+               BackgroundColor="#CCF0F0F0" 
+               CornerRadius="15"
+               Padding="12,6"
+               BorderColor="Transparent"
+               HasShadow="False"
+               Margin="0,0,0,10">
+
+            <Label Text="ⓘ Чат не сохраняется. История очистится при выходе."
+                   TextColor="#808080"
+                   FontSize="11"
+                   FontAttributes="Italic"
+                   HorizontalTextAlignment="Center"/>
+        </Frame>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*, Auto" Padding="0,10,0,0">
+            <Entry Text="{Binding UserMessage}" 
+                   Placeholder="Спроси Чат-бота..." 
+                   ReturnCommand="{Binding SendCommand}"
+                   Grid.Column="0"
+                   Margin="0,0,15,0"/>
+
+            <ImageButton Source="send.png"
+                         Command="{Binding SendCommand}" 
+                         IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}"
+                         Grid.Column="1"
+                         WidthRequest="25"
+                         HeightRequest="25"
+                         HorizontalOptions="Center"
+                         Aspect="AspectFit"
+                         Padding="0"
+                         Margin="0,0,10,5"/>  
+
+
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                               Grid.Column="1" 
+                               IsVisible="{Binding IsBusy}"
+                               Color="Black"
+                               WidthRequest="20"
+                               HeightRequest="20"/>
+        </Grid>
+    </Grid>
+</ContentPage>

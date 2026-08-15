@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Health.WaterPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            IconImageSource="profileicon.png"
+            Order="Primary"
+            Priority="0"
+            Clicked="OnProfileClicked" />
+    </ContentPage.ToolbarItems>
+    <Grid RowDefinitions="Auto,* ,Auto" Padding="0">
+        <Label Text="Ваша норма воды в день:"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="20,10,20,0"
+               Grid.Row="0" />
+        <VerticalStackLayout Spacing="19" Grid.Row="1">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Image Source="glassofwater.png"
+                       WidthRequest="70"
+                       HeightRequest="70"
+                       HorizontalOptions="Center" />
+                <Label x:Name="WaterNormLabel"
+                       VerticalOptions="Center"
+                       Text="~ 2 л."
+                       FontSize="30"
+                       FontAttributes="Italic"/>
+            </HorizontalStackLayout>
+            <Border BackgroundColor="White"
+                    StrokeShape="RoundRectangle 16"
+                    StrokeThickness="0"
+                    Padding="15"
+                    Margin="10,0,10,0">
+                <Border.Shadow>
+                    <Shadow Brush="Black" Opacity="0.3" Radius="10" Offset="5,5" />
+                </Border.Shadow>
+                <VerticalStackLayout>
+                    <Label HorizontalOptions="Center"
+                           Text="Стаканов воды осталось:"
+                           FontSize="20"
+                           Margin="0,0,0,10"/>
+                    <FlexLayout Direction="Row" Wrap="Wrap" x:Name="GlassOfWater">
+                        
+                    </FlexLayout>
+                    <HorizontalStackLayout HorizontalOptions="End" Margin="0,20,0,0">
+                        <Image Source="glassofwater_2.png"
+                               Margin="2"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               VerticalOptions="Center"/>
+                        <Label VerticalOptions="Center"
+                               Text="= 250мл"
+                               FontAttributes="Italic"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <Label Text="* Эти значения примерные. Колличество воды зависит от климата, активности и вашего состояния. Для лучшего результата следите за изменениями."
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="10,0,10,0" />
+        </VerticalStackLayout>
+        <Button Grid.Row="2"
+                VerticalOptions="End"
+                Margin="10,0,10,15"
+                Text="Выпить стакан"
+                FontAttributes="Bold"
+                TextColor="Black"
+                BackgroundColor="#6798cb"
+                Clicked="OnDrinkGlassClicked"/> 
+    </Grid>
+</ContentPage>

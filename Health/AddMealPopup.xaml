@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="Health.AddMealPopup"
+    Color="Transparent">
+
+    <Border StrokeShape="RoundRectangle 16" BackgroundColor="White">
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Добавить приём пищи" FontAttributes="Bold" FontSize="24" HorizontalOptions="Center" />
+
+            <Label Text="Название" FontSize="18" TextColor="Gray" Margin="0,10,0,0"/>
+            <Entry x:Name="MealNameEntry"
+                   Placeholder="Например: Завтрак, Обед..."/>
+
+            <Label Text="Время" FontSize="18" TextColor="Gray" Margin="0,10,0,0"/>
+            <TimePicker x:Name="MealTimePicker"
+                        Format="HH:mm" />
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10" Margin="0,15,0,0">
+                <Image Source="proteinicon.png"
+                   WidthRequest="20"
+                       HeightRequest="20"/>
+                <Label Text="Белки"
+                       FontSize="18"
+                   TextColor="#0080ff"/>
+            </HorizontalStackLayout>
+            <Entry x:Name="ProteinEntry"
+                   Placeholder="Введите количество белков (гр.)"
+                   Keyboard="Numeric"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Image Source="fatsicon.png"
+                   WidthRequest="20"
+                       HeightRequest="20"/>
+                <Label Text="Жиры"
+                       FontSize="18"
+                   TextColor="#ff3d00"/>
+            </HorizontalStackLayout>
+            <Entry x:Name="FatsEntry"
+                   Placeholder="Введите количество жиров (гр.)"
+                   Keyboard="Numeric"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Image Source="carbsicon.png"
+                       WidthRequest="20"
+                       HeightRequest="20"/>
+                <Label Text="Углеводы"
+                       FontSize="18"
+                   TextColor="#ffb703"/>
+            </HorizontalStackLayout>
+            <Entry x:Name="CarbsEntry"
+                   Placeholder="Введите количество углеводов (гр.)"
+                   Keyboard="Numeric"/>
+
+            <Button Text="Добавить"
+                   BackgroundColor="#0080ff"
+                    TextColor="White"
+                    FontSize="18"
+                    CornerRadius="8"
+                    Margin="0,20,0,0"
+                   Clicked="OnAddButtonClicked"/>
+        </VerticalStackLayout>
+    </Border>
+</toolkit:Popup>

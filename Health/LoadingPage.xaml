@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Health.LoadingPage"
+             BackgroundColor="White">
+
+    <Grid>
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+            <ActivityIndicator
+                x:Name="LoadingIndicator"
+                IsRunning="True"
+                Color="#4CAF50"
+                WidthRequest="75"
+                HeightRequest="75"/>
+
+            <Label
+                x:Name="LoadingLabel"
+                Text="Загрузка..."
+                FontSize="24"
+                Opacity="0"
+                WidthRequest="300"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                TextColor="Black"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
+
+
+

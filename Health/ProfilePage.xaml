@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Health.ProfilePage"
+             Title="Профиль">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Заголовок -->
+            <Label Text="Ваш профиль"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,10,0,20"/>
+
+            <!-- Основные параметры -->
+            <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Padding="15">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Основные параметры" FontSize="20" FontAttributes="Bold" TextColor="#6798cb"/>
+                    <Label x:Name="DateOfBirthLabel" Text="Дата рождения: --"/>
+                    <Label x:Name="AgeLabel" Text="Возраст: --"/>
+                    <Label x:Name="HeightLabel" Text="Рост: -- см"/>
+                    <Label x:Name="WeightLabel" Text="Вес: -- кг"/>
+                    <Label x:Name="GenderLabel" Text="Пол: --"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Цели -->
+            <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Padding="15">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Цели" FontSize="20" FontAttributes="Bold" TextColor="#4CAF50"/>
+                    <Label x:Name="GoalLabel" Text="Цель: --"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Образ жизни -->
+            <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Padding="15">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Образ жизни" FontSize="20" FontAttributes="Bold" TextColor="#FF9800"/>
+                    <Label x:Name="LifestyleLabel" Text="Образ жизни: --"/>
+                    <Label x:Name="FitnessLevelLabel" Text="Физ. подготовка: --"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Оборудование -->
+            <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Padding="15">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Оборудование" FontSize="20" FontAttributes="Bold" TextColor="#2196F3"/>
+                    <Label x:Name="GearLabel" Text="--"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Предпочтения -->
+            <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Padding="15">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Предпочтения по тренировкам" FontSize="20" FontAttributes="Bold" TextColor="#9C27B0"/>
+                    <Label x:Name="PreferencesLabel" Text="--"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

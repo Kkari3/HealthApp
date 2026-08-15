@@ -1,0 +1,292 @@
+[
+  {
+    "Id": 1,
+    "Name": "Приседания",
+    "Type": "Силовые",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "squats.png",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 2,
+    "Name": "Отжимания",
+    "Type": "Силовые",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "pushups.gif",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 3,
+    "Name": "Скакалка",
+    "Type": "Кардио",
+    "Gear": [ "Скакалка" ],
+    "Location": "На свежем воздухе",
+    "Duration": 15,
+    "Image": "jump_rope.png",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 4,
+    "Name": "Тяга гантелей в наклоне",
+    "Type": "Силовые",
+    "Gear": [ "Гантели" ],
+    "Location": "Домашние",
+    "Duration": 12,
+    "Image": "dumbell_row.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 5,
+    "Name": "Планка",
+    "Type": "Силовые",
+    "Gear": [ "Никакого (только вес тела)", "Коврик для тренировок" ],
+    "Location": "Домашние",
+    "Duration": 5,
+    "Image": "plank.png",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 6,
+    "Name": "Подтягивания",
+    "Type": "Силовые",
+    "Gear": [ "Турник" ],
+    "Location": "На свежем воздухе",
+    "Duration": 8,
+    "Image": "pullups.gif",
+    "Difficulty": "Регулярно тренируюсь"
+  },
+  {
+    "Id": 7,
+    "Name": "Берпи",
+    "Type": "Кардио",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "На свежем воздухе",
+    "Duration": 10,
+    "Image": "burpee.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 8,
+    "Name": "Йога: поза собаки мордой вниз",
+    "Type": "Йога / растяжка",
+    "Gear": [ "Коврик для тренировок" ],
+    "Location": "Домашние",
+    "Duration": 7,
+    "Image": "yoga_dog_pose.png",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 9,
+    "Name": "Растяжка спины с фитболом",
+    "Type": "Йога / растяжка",
+    "Gear": [ "Фитбол" ],
+    "Location": "Домашние",
+    "Duration": 8,
+    "Image": "fitball_stretch.png",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 10,
+    "Name": "Выпады с гантелями",
+    "Type": "Силовые",
+    "Gear": [ "Гантели" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "dumbbell_lunge.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 11,
+    "Name": "Тяга резинки к поясу",
+    "Type": "Силовые",
+    "Gear": [ "Эспандеры / резинки" ],
+    "Location": "Домашние",
+    "Duration": 12,
+    "Image": "resistance_band_row.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 12,
+    "Name": "Пресс на фитболе",
+    "Type": "Силовые",
+    "Gear": [ "Фитбол" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "fitball_crunch.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 14,
+    "Name": "Бег на месте",
+    "Type": "Кардио",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "Домашние",
+    "Duration": 8,
+    "Image": "running_place.gif",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 15,
+    "Name": "Jumping Jacks (Прыжки)",
+    "Type": "Кардио",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "jumping_jacks.gif",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 16,
+    "Name": "Бег с высоким подниманием колен",
+    "Type": "Кардио",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "Домашние",
+    "Duration": 5,
+    "Image": "high_knees.gif",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 17,
+    "Name": "Ягодичный мостик",
+    "Type": "Силовые",
+    "Gear": [ "Никакого (только вес тела)", "Коврик для тренировок" ],
+    "Location": "Домашние",
+    "Duration": 8,
+    "Image": "glute_bridge.gif",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 18,
+    "Name": "Скручивания на пресс",
+    "Type": "Силовые",
+    "Gear": [ "Никакого (только вес тела)", "Коврик для тренировок" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "crunches.gif",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 19,
+    "Name": "Поза воина II",
+    "Type": "Йога / растяжка",
+    "Gear": [ "Коврик для тренировок" ],
+    "Location": "Домашние",
+    "Duration": 7,
+    "Image": "yoga_warrior_two.png",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 20,
+    "Name": "Поза кошки-коровы",
+    "Type": "Йога / растяжка",
+    "Gear": [ "Коврик для тренировок" ],
+    "Location": "Домашние",
+    "Duration": 5,
+    "Image": "yoga_cat_cow.png",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 21,
+    "Name": "Жим гантелей лежа",
+    "Type": "Силовые",
+    "Gear": [ "Гантели", "Коврик для тренировок" ],
+    "Location": "Домашние",
+    "Duration": 12,
+    "Image": "dumbbell_chest_press.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 22,
+    "Name": "Сгибание на бицепс с гантелями",
+    "Type": "Силовые",
+    "Gear": [ "Гантели" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "dumbbell_bicep_curl.gif",
+    "Difficulty": "Я новичок"
+  },
+  {
+    "Id": 23,
+    "Name": "Приседания \"Гоблет\" с гантелью",
+    "Type": "Силовые",
+    "Gear": [ "Гантели" ],
+    "Location": "Домашние",
+    "Duration": 12,
+    "Image": "goblet_squat.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 24,
+    "Name": "Австралийские подтягивания",
+    "Type": "Силовые",
+    "Gear": [ "Турник" ],
+    "Location": "На свежем воздухе",
+    "Duration": 10,
+    "Image": "australian_pullups.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 25,
+    "Name": "Подъемы ног в висе",
+    "Type": "Силовые",
+    "Gear": [ "Турник" ],
+    "Location": "На свежем воздухе",
+    "Duration": 8,
+    "Image": "hanging_leg_raises.gif",
+    "Difficulty": "Регулярно тренируюсь"
+  },
+  {
+    "Id": 27,
+    "Name": "Зашагивания на скамью",
+    "Type": "Кардио",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "На свежем воздухе",
+    "Duration": 12,
+    "Image": "bench_step_ups.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 28,
+    "Name": "Отведение ноги с резинкой",
+    "Type": "Силовые",
+    "Gear": [ "Эспандеры / резинки" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "band_glute_kickback.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 29,
+    "Name": "Гиперэкстензия на фитболе",
+    "Type": "Силовые",
+    "Gear": [ "Фитбол" ],
+    "Location": "Домашние",
+    "Duration": 8,
+    "Image": "fitball_hyperextension.gif",
+    "Difficulty": "Иногда тренируюсь"
+  },
+  {
+    "Id": 30,
+    "Name": "Берпи (продвинутый)",
+    "Type": "Кардио",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "Домашние",
+    "Duration": 10,
+    "Image": "burpee_advanced.gif",
+    "Difficulty": "Регулярно тренируюсь"
+  },
+  {
+    "Id": 31,
+    "Name": "Отжимания с узкой постановкой рук",
+    "Type": "Силовые",
+    "Gear": [ "Никакого (только вес тела)" ],
+    "Location": "Домашние",
+    "Duration": 8,
+    "Image": "narrow_pushups.gif",
+    "Difficulty": "Регулярно тренируюсь"
+  }
+]

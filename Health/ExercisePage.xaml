@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Health.ExercisePage"
+             Title="">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="profileicon.png"
+                     Order="Primary"
+                     Priority="0"
+                     Clicked="OnProfileClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Margin="15">
+
+            <Label Text="Предстоит сделать:"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   Margin="0,0,0,10"/>
+
+            <CollectionView x:Name="ToDoList"
+                            ItemsLayout="VerticalList"
+                            Margin="0,0,0,20">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border StrokeShape="RoundRectangle 16"
+                                Padding="10"
+                                Margin="0,5"
+                                BackgroundColor="White">
+
+                            <Grid ColumnDefinitions="Auto, *, Auto" 
+                                  ColumnSpacing="15"
+                                  VerticalOptions="Center">
+
+                                <Image Source="{Binding Image}"
+                                       IsAnimationPlaying="True"
+                                       WidthRequest="70"
+                                       HeightRequest="70"
+                                       Aspect="AspectFit"
+                                       Grid.Column="0"
+                                       VerticalOptions="Center">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                            CommandParameter="{Binding .}"
+                                            Tapped="OnExerciseImageTapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                                <VerticalStackLayout Spacing="4"
+                                                     Grid.Column="1"
+                                                     VerticalOptions="Center">
+
+                                    <Label Text="{Binding Name}"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           LineBreakMode="WordWrap" />
+
+                                    <Label Text="{Binding Type}" TextColor="Gray"/>
+                                    <Label Text="{Binding SetsReps}" TextColor="#0080ff"/>
+
+                                </VerticalStackLayout>
+
+                                <ImageButton Source="check.png"
+                                             WidthRequest="40"
+                                             HeightRequest="40"
+                                             BackgroundColor="Transparent"
+                                             CommandParameter="{Binding Id}"
+                                             Clicked="OnExerciseDoneClicked"
+                                             Grid.Column="2"
+                                             VerticalOptions="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <Label Text="Сделано:"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   Margin="0,20,0,10"/>
+
+            <CollectionView x:Name="DoneList" ItemsLayout="VerticalList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border StrokeShape="RoundRectangle 16"
+                                Padding="10"
+                                Margin="0,5"
+                                BackgroundColor="#e0ffe0">
+
+                            <Grid ColumnDefinitions="Auto, *" 
+                                  ColumnSpacing="15"
+                                  VerticalOptions="Center">
+
+                                <Image Source="{Binding Image}"
+                                       IsAnimationPlaying="True"
+                                       WidthRequest="70"
+                                       HeightRequest="70"
+                                       Grid.Column="0"
+                                       VerticalOptions="Center"/>
+
+                                <Label Text="{Binding Name}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Center"
+                                       Grid.Column="1"
+                                       LineBreakMode="WordWrap"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

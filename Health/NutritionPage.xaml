@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Health.NutritionPage">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            IconImageSource="profileicon.png"
+            Order="Primary"
+            Priority="0"
+            Clicked="OnProfileClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Блок калорий -->
+            <Border BackgroundColor="White"
+                    StrokeShape="RoundRectangle 16"
+                    StrokeThickness="0"
+                    Padding="15">
+                <Border.Shadow>
+                    <Shadow Brush="Black" Opacity="0.3" Radius="10" Offset="5,5" />
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Image Source="calorieicon.png" WidthRequest="60" HeightRequest="60" />
+                    <Label Text="Ваша дневная норма"
+                           FontSize="18"
+                           TextColor="Gray"
+                           HorizontalOptions="Center" />
+                    <Label x:Name="CaloriesLabel"
+                           Text="0 ккал"
+                           FontSize="40"
+                           FontAttributes="Bold"
+                           TextColor="#ff6b00"
+                           HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Блок БЖУ -->
+            <VerticalStackLayout Spacing="15">
+                <!-- Белки -->
+                <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Padding="10">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Opacity="0.2" Radius="8" Offset="3,3" />
+                    </Border.Shadow>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="proteinicon.png" WidthRequest="40" HeightRequest="40" />
+                        <VerticalStackLayout>
+                            <Label Text="Белки" FontSize="20" FontAttributes="Bold" TextColor="#0080ff"/>
+                            <Label x:Name="ProteinGramsLabel" Text="0 г" FontSize="16" />
+                        </VerticalStackLayout>
+                        <Label x:Name="ProteinCalsLabel" Text="0 ккал" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#0080ff"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+
+                <!-- Жиры -->
+                <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Padding="10">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Opacity="0.2" Radius="8" Offset="3,3" />
+                    </Border.Shadow>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="fatsicon.png" WidthRequest="40" HeightRequest="40" />
+                        <VerticalStackLayout>
+                            <Label Text="Жиры" FontSize="20" FontAttributes="Bold" TextColor="#ff3d00"/>
+                            <Label x:Name="FatGramsLabel" Text="0 г" FontSize="16" />
+                        </VerticalStackLayout>
+                        <Label x:Name="FatCalsLabel" Text="0 ккал" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#ff3d00"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+
+                <!-- Углеводы -->
+                <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Padding="10">
+                    <Border.Shadow>
+                        <Shadow Brush="Black" Opacity="0.2" Radius="8" Offset="3,3" />
+                    </Border.Shadow>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="carbsicon.png" WidthRequest="40" HeightRequest="40" />
+                        <VerticalStackLayout>
+                            <Label Text="Углеводы" FontSize="20" FontAttributes="Bold" TextColor="#ffb703"/>
+                            <Label x:Name="CarbsGramsLabel" Text="0 г" FontSize="16" />
+                        </VerticalStackLayout>
+                        <Label x:Name="CarbsCalsLabel" Text="0 ккал" 
+                               FontSize="18" 
+                               FontAttributes="Bold"
+                               TextColor="#ffb703"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+
+            <!-- Подсказка -->
+            <Label Text="* Эти значения примерные. Для лучшего результата следите за изменениями."
+                   FontSize="14"
+                   TextColor="Gray"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="10,0,10,0" />
+            
+            <!-- Кнопки управления -->
+            <VerticalStackLayout Spacing="15" Margin="0,20,0,0">
+                <!-- Кнопка добавления калорий -->
+                <Border StrokeShape="RoundRectangle 25"
+                        BackgroundColor="#ff6b00"
+                        HeightRequest="50"
+                        HorizontalOptions="Fill">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnAddCaloriesClicked"/>
+                    </Border.GestureRecognizers>
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="0">
+                        <Border Grid.Column="0"
+                                HeightRequest="60" 
+                                WidthRequest="60"
+                                StrokeShape="RoundRectangle 30"
+                                BackgroundColor="#ff6b00"
+                                Margin="-5,-5,0,0">
+                            <Image Source="addfood.png"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   HorizontalOptions="Center"/>
+                        </Border>
+                        <Label Grid.Column="1"
+                               Text="Добавить приём пищи"
+                               TextColor="White"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               Margin="10,0,0,0"/>
+                    </Grid>
+                </Border>
+
+                <!-- Кнопка журнала -->
+                <Border StrokeShape="RoundRectangle 25"
+                        BackgroundColor="#7CA923"
+                        HeightRequest="50"
+                        HorizontalOptions="Fill">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnJournalClicked"/>
+                    </Border.GestureRecognizers>
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="0">
+                        <Border Grid.Column="0"
+                                HeightRequest="60" 
+                                WidthRequest="60"
+                                StrokeShape="RoundRectangle 30"
+                                BackgroundColor="#7CA923"
+                                Margin="-5,-5,0,0">
+                            <Image Source="timejournal.png"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   HorizontalOptions="Center"/>
+                        </Border>
+                        <Label Grid.Column="1"
+                               Text="Журнал питания"
+                               TextColor="White"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               Margin="10,0,0,0"/>
+                    </Grid>
+                </Border>
+                <!-- Кнопка статистики -->
+                <Border StrokeShape="RoundRectangle 25"
+                        BackgroundColor="#0080ff"
+                        HeightRequest="50"
+                        HorizontalOptions="Fill">   
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnStatisticsClicked"/>
+                    </Border.GestureRecognizers>
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="0">
+                        <Border Grid.Column="0"
+                                HeightRequest="60" 
+                                WidthRequest="60"
+                                StrokeShape="RoundRectangle 30"
+                                BackgroundColor="#0080ff"
+                                Margin="-5,-5,0,0">
+                            <Image Source="statistics.png"
+                                   HeightRequest="30"
+                                   WidthRequest="30"
+                                   HorizontalOptions="Center"/>     
+                        </Border>
+                        <Label Grid.Column="1"
+                               Text="Статистика питания"
+                               TextColor="White"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               Margin="10,0,0,0"/>
+                    </Grid>
+                </Border>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

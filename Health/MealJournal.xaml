@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:Health.Models"
+             x:Class="Health.MealJournal">
+
+    <ContentPage.Resources>
+
+        <!-- Заголовок группы -->
+        <DataTemplate x:Key="MealGroupHeaderTemplate">
+            <Label Text="{Binding DateLabel}"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   TextColor="#222"
+                   Margin="0,20,0,5"/>
+        </DataTemplate>
+
+        <!-- Одиночная запись о приёме пищи -->
+        <DataTemplate x:Key="MealItemTemplate"
+                      x:DataType="models:MealEntry">
+
+            <Border StrokeShape="RoundRectangle 12"
+                    BackgroundColor="White"
+                    Padding="15"
+                    Margin="0,0,0,10">
+
+                <Border.Shadow>
+                    <Shadow Brush="Black"
+                            Opacity="0.1"
+                            Radius="10"
+                            Offset="3,3" />
+                </Border.Shadow>
+
+                <Grid RowDefinitions="Auto, Auto, Auto"
+                      ColumnDefinitions="*, Auto"
+                      RowSpacing="5">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="{Binding Name}"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#333"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="{Binding MealTimeDisplay}"
+                           FontSize="14"
+                           TextColor="Gray"/>
+
+                    <Label Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"
+                           Text="{Binding TotalCalories, StringFormat='{0} ккал'}"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           TextColor="#ff6b00"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                           Text="{Binding MacrosDisplay}"
+                           FontSize="16"
+                           TextColor="#555"
+                           Margin="0,10,0,0"/>
+
+                </Grid>
+
+            </Border>
+
+        </DataTemplate>
+
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Padding="15" Spacing="10">
+
+        <Label Text="Последние 7 дней"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0,0,0,10"/>
+
+        <CollectionView x:Name="MealsCollectionView"
+                        IsGrouped="True"
+                        GroupHeaderTemplate="{StaticResource MealGroupHeaderTemplate}"
+                        ItemTemplate="{StaticResource MealItemTemplate}"
+                        EmptyView="Записей о приёмах пищи за последние 7 дней нет." />
+
+    </VerticalStackLayout>
+
+</ContentPage>
